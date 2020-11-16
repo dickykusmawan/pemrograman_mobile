@@ -93,19 +93,24 @@ class ProductPage extends StatelessWidget {
           padding: EdgeInsets.all(0),
           child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Image.asset("assets/appimages/" + this.item.image),
+                Image.asset(
+                  "assets/appimages/" + this.item.image,
+                  width: 600,
+                  height: 200,
+                  fit: BoxFit.fill,
+                ),
                 Expanded(
                     child: Container(
                         padding: EdgeInsets.all(5),
                         child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: <Widget>[
                             Text(this.item.name,
                                 style: TextStyle(fontWeight: FontWeight.bold)),
                             Text(this.item.description),
-                            Text("Price: " + this.item.price.toString()),
+                            Text("harga: " + this.item.price.toString()),
                             RatingBox(),
                           ],
                         )))
@@ -145,8 +150,8 @@ class _RatingBoxState extends State<RatingBox> {
     double _size = 20;
     print(_rating);
     return Row(
-      mainAxisAlignment: MainAxisAlignment.end,
-      crossAxisAlignment: CrossAxisAlignment.end,
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisSize: MainAxisSize.max,
       children: <Widget>[
         Container(
@@ -227,7 +232,7 @@ class ProductBox extends StatelessWidget {
                             Text(this.item.name,
                                 style: TextStyle(fontWeight: FontWeight.bold)),
                             Text(this.item.description),
-                            Text("Price: " + this.item.price.toString()),
+                            Text("Harga: " + this.item.price.toString()),
                             RatingBox(),
                           ],
                         )))
